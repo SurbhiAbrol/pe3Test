@@ -23,7 +23,7 @@ public class ArrayExceptionTest
     @Test
     public void checkIndex_1()
     {
-        ArrayException array = new ArrayException(10);
+        ArrayException array = new ArrayException(1);
         String exceptionMessage = "Index can't be Less than 0";
         myException.expect(IndexOutOfBoundsException.class);
         myException.expectMessage(exceptionMessage);
