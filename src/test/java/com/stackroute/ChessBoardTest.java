@@ -41,7 +41,7 @@ public class ChessBoardTest
     }
 
     @Test
-    public void getColor_4()
+    public void getRow()
     {
         String expectedColor = "WW|BB|WW|BB|WW|BB|WW|BB|";
 
@@ -51,7 +51,7 @@ public class ChessBoardTest
     }
 
     @Test
-    public void getColor_5()
+    public void getColumn()
     {
         String expectedColor = "BB|WW|BB|WW|BB|WW|BB|WW|";
 
