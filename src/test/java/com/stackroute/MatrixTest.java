@@ -1,33 +1,27 @@
 package com.stackroute;
+
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class MatrixTest {
-    Matrix obj = new Matrix ();
-
+    Matrix matrix=new Matrix();
     @Test
-public void matrixSum1()
+    public void matrixAdd()
     {
-        int[][] result = obj.Sum(new int[][]{{1, 2},{3,4},{5,6}}, new int[][]{{9, 8},{7,6},{5,4}});
-        assertArrayEquals(result,new int[][]{{10,10},{10,10},{10,10}});
+        int[][] result = matrix.addMatrix(new int[][]{{1,2},{3,4},{5,6}},new int[][]{{9,8},{7,6},{5,4}},3,2);
+        assertArrayEquals(new int[][]{{10,10},{10,10},{10,10}},result);
     }
     @Test
-    public void matrixSum2()
+    public void matrixAdd1()
     {
-        int[][] result = obj.sum(new int[][]{{1,2},{3,4}}, new int[][]{{4,3},{2,1}});
-        assertArrayEquals(new int[][]{{5,5},{5,5}},result);
+        int[][] result1=matrix.addMatrix(new int[][]{{1,2,3},{1,2,1}},new int[][]{{1,1,1},{1,0,1}},2,3);
+        assertArrayEquals(new int[][]{{2,3,4},{2,2,2}},result1);
     }
     @Test
-    public void matrixSum3()
+    public void matrixAddFail()
     {
-        int[][] result = obj.sum(new int[][]{{1, 2, 3}, {4, 5, 6},{7,8,9}}, new int[][]{{9, 8, 7}, {6, 5, 4},{1,2,3}});
-        assertArrayEquals(new int[][]{{10,10,10},{10,10,10},{10,10,10}},result);
+        int[][] result2=matrix.addMatrix(new int[][]{{3,4},{6,7}},new int[][]{{1,2},{2,1}},2,2);
+        assertNotEquals(new int[][]{{5,5},{5,1}},result2);
     }
-    @Test
-public void matrixSumFail()
-{
-    int[][] result = obj.Sum(new int[][]{{1, 2, 3}, {4, 5, 6}}, new int[][]{{9, 8, 7}, {6, 5, 4}});
-    assertNotEquals(result,new int[][]{{10,10},{10,10}});
 }
-
- }
